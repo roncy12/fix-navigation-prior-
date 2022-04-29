@@ -1,0 +1,132 @@
+<!--<a href="#main-content" class="skip-to-main-link">{{lang 'header.skip_to_main'}}</a>-->
+
+<div class="banners" data-banner-location="top">
+    <div class="banner" data-event-type="promotion">
+        <div data-event-type="promotion-click">
+           <!--<p><span>Presidents Day Sale 30% Off on All Cool Gel Mattresses! Code: ISP30</span></p>-->
+           <p><img src="https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/icon-awesome-tag.png?t=1647839940&_gl=1*rketal*_ga*Nzk0NzIwMzUxLjE2NDY2MzgxMzc.*_ga_WS2VZYPC6G*MTY0NzgzODg1Ni40Ni4xLjE2NDc4NDAzOTAuNTU." class="mr-3"><span>New Item Intro Flash Sale! 40% Off! Limited Time! Code: ISCOOLGel40</span></p>
+        </div>
+    </div>
+</div>
+
+<header class="header header-bannerimg" id="myHeader" role="banner">
+    <div class="header-div ">
+
+    <div>
+        <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+             <span class="mobileMenu-toggleIcon">Toggle menu</span>
+         </a> 
+    </div>
+    <div class="links-header logo-is">
+        {{#if page_type '===' 'default'}}
+        <div class="header-logo header-logo--{{theme_settings.logo-position}}">
+            {{> components/common/store-logo}}
+        </div>
+        {{else}}
+            <div class="header-logo header-logo--{{theme_settings.logo-position}}">
+                {{> components/common/store-logo}}
+            </div>
+        {{/if}}
+    </div>
+
+
+    <div class="links-header head-nav">
+         <div class="navPages-container" id="menu" data-menu>
+            {{> components/common/navigation-menu}}
+        </div>
+    </div>
+
+    <div class="links-header head-cart-icon">
+        <nav class="navUser">
+
+            <ul class="navUser-section navUser-section--alt">
+            <li class="navUser-item">
+                <button class="navUser-action navUser-action--quickSearch"
+                type="button"
+                id="quick-search-expand"
+                data-search="quickSearch"
+                aria-controls="quickSearch"
+                aria-label="{{lang 'common.search'}}"
+                >
+
+                <img class="lazyload fas fa-search" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/icon-open-magnifying-glass.png?t=1647839190&_gl=1*m339h0*_ga*Nzk0NzIwMzUxLjE2NDY2MzgxMzc.*_ga_WS2VZYPC6G*MTY0NzgzODg1Ni40Ni4xLjE2NDc4MzkxOTMuMzE.'}}" />
+
+                </button>
+            </li>
+            {{#if settings.gift_certificates_enabled}}
+                <li class="navUser-item">
+                    <a class="navUser-action"
+                    href="{{urls.gift_certificate.purchase}}"
+                    aria-label="{{lang 'common.gift_cert'}}"
+                    >
+                        {{lang 'common.gift_cert'}}
+                    </a>
+                </li>
+            {{/if}}
+            <li class="navUser-item navUser-item--account">
+                {{#if customer}}
+                    <a class="navUser-action"
+                    href="{{urls.account.index}}"
+                    aria-label="{{lang 'common.account'}}"
+                    >
+                        {{lang 'common.account'}}
+                    </a>
+                    <a class="navUser-action"
+                    href="{{urls.auth.logout}}"
+                    aria-label="{{lang 'common.logout'}}"
+                    >
+                        {{lang 'common.logout'}}
+                    </a>
+                {{else}}
+                    <a class="navUser-action"
+                    href="{{urls.auth.login}}"
+                    aria-label="{{lang 'common.login'}}"
+                    >
+
+                    <img class="lazyload fa fa-user-circle" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/icon-awesome-user-circle.png?t=1647839191&_gl=1*1bw8rt7*_ga*Nzk0NzIwMzUxLjE2NDY2MzgxMzc.*_ga_WS2VZYPC6G*MTY0NzgzODg1Ni40Ni4xLjE2NDc4MzkxOTMuMzE.'}}" />
+
+                    </a>
+
+                {{/if}}
+            </li>
+            <li class="navUser-item navUser-item--cart">
+                <a class="navUser-action"
+                data-cart-preview
+                data-dropdown="cart-preview-dropdown"
+                data-options="align:right"
+                href="{{urls.cart}}"
+                aria-label="{{lang 'cart.nav_aria_label'}}"
+                >
+                    <span class="navUser-item-cartLabel">
+
+                        <img class="lazyload fa fa-shopping-cart" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/icon-awesome-shopping-cart.png?t=1647839191&_gl=1*1bw8rt7*_ga*Nzk0NzIwMzUxLjE2NDY2MzgxMzc.*_ga_WS2VZYPC6G*MTY0NzgzODg1Ni40Ni4xLjE2NDc4MzkxOTMuMzE.'}}" />
+                    <span class="countPill cart-quantity"></span>
+
+                </a>
+
+                <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" data-prevent-quick-search-close>
+    {{> components/common/quick-search name='nav-quick-search'}}
+    
+</div>
+   
+</header>
+
+<div class="navigation-sticky" style="top: 146px;">
+    <div class="d-flex justify-content-center mx-auto w-75">
+        <div class="d-flex justify-content-around w-75 under-con">
+            <div><img src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/shipping-icon-02.png?t=1637199032&_gl=1*qavau1*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNzE5Nzc3MC4zODYuMS4xNjM3MTk5MDMxLjM3'}}" class="mr-2">Free, no-contact delivery </div>
+            <div><img src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/100-night-02.png?t=1637199031&_gl=1*qavau1*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNzE5Nzc3MC4zODYuMS4xNjM3MTk5MDMxLjM3'}}" class="mr-2">100-night risk-free trial </div>
+            <div><img src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/10yr-warranty-icon-02.png?t=1637199030&_gl=1*1gntvxi*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNzE5Nzc3MC4zODYuMS4xNjM3MTk5MDMxLjM3'}}" class="mr-2">10-year limited warranty </div>
+        </div>
+    </div>
+</div>
+
+<!-- {{{region name="header_bottom--global"}}}
+{{{region name="header_bottom"}}} -->

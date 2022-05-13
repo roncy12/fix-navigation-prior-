@@ -1030,6 +1030,9 @@ transform:translateX(-100%);
             border-top: 1px solid #ccc;
             border-left: 0 solid;
             transition: .5s all .5s;
+            @media screen and (max-width: 1024px) {
+              top: 95px;
+            }
         }
         .header.sticky #menu .navPages ul.navPages-list>li.navPages-item:hover>a+div.navPage-subMenu {
                 display: block!important;
@@ -1037,7 +1040,7 @@ transform:translateX(-100%);
                 left: 0;
                 position: fixed;
                 background: #fff;
-                top: 12%;
+                top: 95px;
                 border-top: 1px solid #ccc;
                 border-left: 0 solid;
                 transition: .5s all .5s;
@@ -1048,13 +1051,13 @@ transform:translateX(-100%);
                 left: 0;
                 position: fixed;
                 background: #fff;
-                top: 12%;
+                top: 95px;
                 border-top: 1px solid #ccc;
                 border-left: 0 solid;
                 transition: .5s all .5s;
         }
         
-        #menu .navPages ul.navPage-subMenu-list>li.navPage-subMenu-item-child:hover>a+div.custom-bed-nav>.navPage-subMenu.navPage-subMenu-horizontal {
+        #menu .navPages ul.navPage-subMenu-list>li.navPage-subMenu-item-child:hover>a+div.custom-bed-nav>.navPage-subMenu.navPage-subMenu-horizontal{
             display: block!important;
             left: 0;
             position: fixed;
@@ -1063,13 +1066,14 @@ transform:translateX(-100%);
             border-top: 1px solid #ccc;
             border-left: 0 solid;
             transition: .5s all .5s;
+            padding: 0 !important;
         }
         .header.sticky #menu .navPages ul.navPage-subMenu-list>li.navPage-subMenu-item-child:hover>a+div.custom-bed-nav>.navPage-subMenu.navPage-subMenu-horizontal {
             display: block!important;
             left: 0;
             position: fixed;
             background: #fff;
-            top: 12%;
+            top: 95px;
             border-top: 1px solid #ccc;
             border-left: 0 solid;
             transition: .5s all .5s;
@@ -1080,10 +1084,11 @@ transform:translateX(-100%);
             left: 0;
             position: fixed;
             background: #fff;
-            top: 12%;
+            top: 95px ;
             border-top: 1px solid #ccc;
             border-left: 0 solid;
             transition: .5s all .5s;
+            padding: 0 !important;
         }
         
         .navPages .navPage-subMenu-list.gg {

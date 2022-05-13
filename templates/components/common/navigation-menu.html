@@ -44,6 +44,7 @@
 
 
         {{#each categories}}
+         {{#all (if name '!==' 'Mattresses') (if name '!==' 'Hybrid Mattresses')}}
             <li class="navPages-item">
             {{#if ../theme_settings.navigation_design '===' 'simple'}}
                 {{> components/common/navigation-list-new}}
@@ -52,6 +53,7 @@
                 {{> components/common/navigation-list-alternate}}
             {{/if}}
             </li>
+         {{/all}}
         {{/each}}
         <li class="navPages-item navPages-item-page d-none">
             <a class="navPages-action "

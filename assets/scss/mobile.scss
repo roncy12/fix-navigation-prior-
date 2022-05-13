@@ -479,7 +479,6 @@ div > a.reviewreal-button {
         z-index: 20;
         left: 0;
         margin: 0;
-        overflow-y: scroll;
         position: fixed;
     }
 
@@ -555,7 +554,6 @@ li.navPages-item {
     left: 0;
     background-size: cover;
     width: auto;
-    top: 2.5rem;
 }
 .navPages {
     background-color: #174567;
@@ -1115,9 +1113,6 @@ button.accordion-faqs:hover, button.accordion-faqs:focus, .button.accordion-faqs
     }
     a.mobileMenu-toggle {
         top: 5%;
-    }
-    .navPages {
-        top: 0.5rem;
     }
     .navPages ul {
         width: 95%;

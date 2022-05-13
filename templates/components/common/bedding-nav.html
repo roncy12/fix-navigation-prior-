@@ -6,15 +6,8 @@
     {{#each children}}
         <li class="navPage-subMenu-item-child w-20">
             {{#if children}}
-            <!-- {{#if (lowercase (dashcase name)) '===' "blankets" }} 
-                <a class="navPage-subMenu-action navPages-action navPages-action-depth-max has-subMenu open" href="{{url}}" data-collapsible="navPages-{{id}}">
-                    {{name}}                
-                    <i class="icon navPages-action-moreIcon" aria-hidden="true">
-                        <svg><use xlink:href="#icon-chevron-down" /></svg>
-                    </i>
-                </a> 
-            {{/if}} -->
-                <a class="navPage-subMenu-action navPages-action navPages-action-depth-max has-subMenu{{#if is_active}} activePage{{/if}}" href="{{url}}">
+
+                <a class="navPage-subMenu-action navPages-action navPages-action-depth-max has-subMenu activePage" href="{{url}}">
                     {{name}}
                  
                     <i class="icon navPages-action-moreIcon" aria-hidden="true">
@@ -23,14 +16,33 @@
                 </a>
                 <div class="custom-bed-nav">                  
                     {{> components/common/navigation-dropdown-custom}}
-                </div>             
+                </div>   
+                
+
             {{else}}
                 <a class="navPage-subMenu-action navPages-action{{#if is_active}} activePage{{/if}}" href="{{url}}">{{name}}</a>
             {{/if}}
         </li>
     {{/each}}
+
     <li class="navPage-subMenu-item-parent w-20">
         <a class="navPage-subMenu-action navPages-action navPages-action-depth-max" href="{{url}}">Browse All</a>
        
     </li>
 </ul>
+<div class="custom-bed-nav">
+<div class="navPage-subMenu navPage-subMenu-horizontal custom-dropdown mt-3 border-top-0 justify-content-between" id="navPages-custom" aria-hidden="true" tabindex="-1" style="display: block; top: 0; left: 0; background: #fff;">
+    <ul class="navPage-subMenu-list">
+        <li class="navPage-subMenu-item-child border-bottom-0 d-block">
+            <a class="navPage-subMenu-action  w-48 p-0 navPages-action{{#if is_active}} activePage{{/if}}" href="{{url}}">600 TC Cotton-Blend Sheet Set
+                <img class="lazyload mt-2 mb-2" src="{{cdn 'https://store-z2qdisybty.mybigcommerce.com/content/nav/weekender-sherpa-blanket.png'}}"  />
+            </a>
+        </li>
+        <li class="navPage-subMenu-item-child border-bottom-0 d-block">
+            <a class="navPage-subMenu-action  w-48 p-0 navPages-action{{#if is_active}} activePage{{/if}}" href="{{url}}">600 TC Cotton-Blend Sheet Set
+                <img class="lazyload mt-2 mb-2" src="{{cdn 'https://store-z2qdisybty.mybigcommerce.com/content/nav/weekender-sherpa-blanket.png'}}"  />
+            </a>
+        </li>
+    </ul>
+</div>
+</div>

@@ -510,9 +510,10 @@
         width: 95%;
         border: 1px solid #e5e5e5;
         border-radius: 2%;
-        height: 450px;
+        height: 550px;
         @media screen and (max-width: 1380px) {
             width: 94%;
+            height: 410px;
         }
     }
     .productView.grn-matt-page {
@@ -1308,6 +1309,7 @@
             position: relative;
             top: 0;
             left: 8%;
+            margin-bottom: 0;
         }
         .grn-matt-stamp {
             width: auto;
@@ -2120,6 +2122,8 @@
         }
         .productView-img-container img{
             border-radius: 2%;
+            object-fit: unset;
+            image-rendering: -webkit-optimize-contrast;
         }
         .productView-image .easyzoom-flyout {
             border-radius: 2%;
@@ -2259,6 +2263,7 @@
 
         .slick-next, .slick-prev{
             background-color: transparent;
+            border: none;
         }
         .productView.grn-matt-page span.stamped-summary-actions-newreview{
             display: none;
@@ -2720,5 +2725,81 @@ ul.check-blue.hybrid li {
 
 //===========================================================
 
+.newreview-section .review-counter .stamped-tab-container{
+	display: inline-block !important;
+}
 
+.review-counter .stamped-messages{
+    display: block !important;
+}
+// absolute-circle
+
+    ul.circle-list li {
+        border: 3px solid #173456;
+        border-radius: 100%;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        font-weight: bold;
+        background: #fff;
+        color: #173456;
+        font-size: 18px;
+    }
+    ul.circle-list li::marker {
+        display: none;
+        content: "";
+    }
+    li.circle-1{
+        position: absolute;
+        top: 10%;
+        left: 15%;
+        @media screen and (max-width: 1309px) {
+            top: 7%;
+        }
+    
+    }
+    li.circle-2 {
+        position: absolute;
+        top: 25%;
+        left: 15%;
+        @media screen and (max-width: 1309px) {
+            top: 23%;
+        }
+    }
+    li.circle-3 {
+        position: absolute;
+        top: 42%;
+        left: 15%;
+        @media screen and (max-width: 1309px) {
+            top: 40%;
+        }
+    }
+    li.circle-4 {
+        position: absolute;
+        top: 70%;
+        left: 15%;
+        @media screen and (max-width: 1309px) {
+            top: 68%;
+        }
+    }
+    li.circle-5 {
+        position: absolute;
+        top: 90%;
+        left: 15%;
+        @media screen and (max-width: 1309px) {
+            top: 88%;
+        }
+    }
+    .activeCircle {
+        border: 3px solid #ffffff !important;
+        background: #173456 !important;
+        color: #fff !important;
+    }
+       ul.circle-list li:hover {
+            cursor: pointer;
+        }
+    .productView-image .easyzoom-flyout img{
+        display: none;
+    }
+    
 } //END OF PRODUCT BODY BRACE CSS

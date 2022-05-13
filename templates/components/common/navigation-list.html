@@ -19,47 +19,46 @@
             </a>
         </li>
         {{#each children}}
-            <li class="navPage-subMenu-item">
-                {{#if children}}
-                    <a class="navPage-subMenu-action navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"
-                       href="{{url}}"
-                       aria-label="{{name}}"
-                    >
-                        {{name}}
-                        <span class="collapsible-icon-wrapper"
-                            data-collapsible="navPages-{{id}}"
-                            data-collapsible-disabled-breakpoint="medium"
-                            data-collapsible-disabled-state="open"
-                            data-collapsible-enabled-state="closed"
-                        >
-                            <i class="icon navPages-action-moreIcon" aria-hidden="true">
-                                <svg><use xlink:href="#icon-chevron-down" /></svg>
-                            </i>
-                        </span>
-                    </a>
-                    <ul class="navPage-childList" id="navPages-{{id}}">
-                        {{#each children}}
-                        <li class="navPage-childList-item">
-                            <a class="navPage-childList-action navPages-action{{#if is_active}} activePage{{/if}}"
-                               href="{{url}}"
-                               aria-label="{{name}}"
-                            >
-                                {{name}}
-                            </a>
-                        </li>
-                        {{/each}}
-                    </ul>
-                {{else}}
-                    <a class="navPage-subMenu-action navPages-action{{#if is_active}} activePage{{/if}}"
-                       href="{{url}}"
-                       aria-label="{{name}}"
-                    >
-                        {{name}}
-                    </a>
-                {{/if}}
-            </li>
-        {{/each}}
+        <li class="navPage-subMenu-item">
+            {{#if children}}
+                <a
+                    class="navPage-subMenu-action navPages-action has-subMenu navPage-custom-id-{{id}}-action navPage-custom-subMenu-action " data-board-data="navPage-custom-id-{{id}}-content"
+                    href="{{url}}"
+                    data-collapsible="navPages-{{id}}"
+                    data-collapsible-disabled-breakpoint="medium"
+                    data-collapsible-disabled-state="open"
+                    data-collapsible-enabled-state="closed">
+                    {{name}} <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i>
+                </a>
+                <ul class="navPage-childList _nav-open-flag" data-ap-category-url="{{url}}" id="navPages-{{id}}">
+                </ul>
+                
+                <div class="category-menu-item-custom-content navPage-custom-id-{{id}}-content" data-board-data="navPage-custom-id-{{id}}-action" id="navPages-{{id}}" >
+                    <div class="custom-content-title "><a class="navPages-action" href="{{url}}">{{name}} <br> <span class="view-all-label">( View All )</span></a></div>
+                    <div class="custom-content-slides" id="navPages-{{id}}" data-ap-category-url="{{url}}" data-content-parent="navPage-custom-id-{{id}}-content">
+                    </div>
+                    <img class="loader-ajax-item img-responsive lazyload"  data-sizes="auto" src="{{cdn 'img/loading.svg'}}" />
+                </div>
+
+            {{else}}
+                <a class="navPage-subMenu-action navPages-action has-subMenu navPage-custom-id-{{id}}-action navPage-custom-subMenu-action " data-board-data="navPage-custom-id-{{id}}-content" href="{{url}}">{{name}}</a>
+                
+                <div class="category-menu-item-custom-content navPage-custom-id-{{id}}-content" data-board-data="navPage-custom-id-{{id}}-action" id="navPages-{{id}}" >
+                    <div class="custom-content-title "><a class="navPages-action" href="{{url}}">{{name}} <br><span class="view-all-label">( View All )</span></a></div>
+                    <div class="custom-content-slides sn-products" id="navPages-{{id}}" data-ap-category-url="{{url}}" data-content-parent="navPage-custom-id-{{id}}-content">
+                    </div>
+                    <img class="loader-ajax-item img-responsive lazyload"  data-sizes="auto" src="{{cdn 'img/loading.svg'}}" />
+                </div>
+                
+            {{/if}}
+        </li>
+    {{/each}}
     </ul>
+
+    <div class="category-menu-custom-content col-md-9 ">
+	
+	
+	</div>
 </div>
 {{else}}
 <a class="navPages-action{{#if is_active}} activePage{{/if}}"

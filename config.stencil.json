@@ -1,13 +1,18 @@
 {
   "customLayouts": {
     "brand": {},
-    "category": {},
+    "category": {
+      "mattresses.html":"/mattresses/"
+    },
     "page": {
-      "affirm--template.html":"/affirm/"
+      "affirm--template.html":"/affirm/",
+      "custom-about-us.html":"/about-us/",
+      "custom-faqs.html":"/faqs/",
+      "custom-fake-reviews.html":"/fake-reviews/"
     },
     "product": {}
   },
   "apiHost": "https://api.bigcommerce.com",
   "normalStoreUrl": "https://icon-sleep.com",
-  "port": 3000
+  "port": 3003
 }

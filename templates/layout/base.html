@@ -18,7 +18,9 @@
          <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
          <script src="https://kit.fontawesome.com/5116efd51e.js" crossorigin="anonymous"></script>
+         <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
          <script src="{{cdn 'assets/jquery-3.3.1.min.js'}}"></script>
+         <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
         <script>
             {{!-- Change document class from no-js to js so we can detect this in css --}}
             document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -146,6 +148,19 @@
             <script type="text/javascript">//<![CDATA[ 
             StampedFn.init({ apiKey: 'pubkey-2L5A8636KNO175w7kxJ92V55UDvpz3', storeUrl: 'icon-sleep.com' }); 
             // ]]></script>      
+        {{else}}
+              <style>
+                  .sticky{
+                        box-shadow: none;
+                        border-bottom: 0;
+                  }
+                  .navigation-sticky{
+                    position: fixed;
+                  }
+                  .navigation-sticky.head-stick{
+                    top: 95px !important;
+                  }
+              </style>
         {{/if}}  
 
             <script type="text/javascript">
@@ -225,16 +240,25 @@
               window.addEventListener("scroll", function(){ 
               var st = window.pageYOffset || document.documentElement.scrollTop; 
               var navPage = document.getElementsByClassName("header-div");
+              var navSticky = document.getElementsByClassName("navigation-sticky");
               if(st==0){
                   for (let i = 0; i < navPage.length; i++) {
                       const div = navPage[i];
                       div.classList.remove("sticky");
+                  }
+                  for (let i = 0; i < navSticky.length; i++) {
+                      const div = navSticky[i];
+                      div.classList.remove("head-stick");
                   }
               }else{
 
                   for (let i = 0; i < navPage.length; i++) {
                       const div = navPage[i];
                       div.classList.add("sticky");
+                  }
+                  for (let i = 0; i < navSticky.length; i++) {
+                      const div = navSticky[i];
+                      div.classList.add("head-stick");
                   }
               }
 
@@ -312,17 +336,16 @@
             });
 
         </script>  
-          
-          
+
         <script>
                 $(document).ready(function(){
                     var slick_option = {
                         "dots": false,
-                        "mobileFirst": true,
+                        "mobileFirst": true, 
                         "slidesToShow": 2,
                         "slidesToScroll": 2,
                         "autoplay": false,
-                    "infinite": false
+                        "infinite": false,
                     };
 
                   $('.slide-navv').each(function(){
@@ -330,17 +353,59 @@
                   });
 
                     $('.navPage-subMenu-action.navPages-action.navPages-action-depth-max.has-subMenu').on('hover click mousemove' , function(){
+                      
                       var _slickContainer = $(this).parent().find('.slide-navv');
                       if( _slickContainer.length > 0){
-                            _slickContainer[0].slick.refresh();	 
+                            _slickContainer[0].slick.refresh();	   
+                            
+                            console.log( _slickContainer[0].slick.refresh());
                       }
+                    
                     });
-
+                    
+                    
                     $(window).on('resize orientationchange', function() {
                         $('.slide-navv').slick('resize');
                     });
-
+                  
                 });
+        </script>
+
+        <script>
+          $(document).ready(function(){
+            // $("a.navPage-subMenu-action.navPages-action.navPages-action-depth-max.has-subMenu[href='/bedding/blankets/']").trigger('mouseenter');
+            // $("a.navPage-subMenu-action.navPages-action.navPages-action-depth-max.has-subMenu[href='/bedding/blankets/']").css("background","red");
+
+              //  $(".custom-bed-nav .active-sub").css("display","block");
+            // }
+            // if($("a.navPage-subMenu-action.navPages-action.navPages-action-depth-max.has-subMenu[href='/bedding/blankets/']").trigger('hover')){
+            //   console.log("test");
+            //   $("#menu .navPages ul.navPage-subMenu-list > li.navPage-subMenu-item-child:hover > a + div.custom-bed-nav > .navPage-subMenu.navPage-subMenu-horizontal").css("display","block !important")
+            // }else{
+            //   console.log("False");
+            // }
+
+            if($(".navPages-list:not(.navPages-list-depth-max) .navPages-item.child-active .navPages-action.has-subMenu[href='/bedding/]")){
+              // $("a.navPage-subMenu-action.navPages-action.navPages-action-depth-max.has-subMenu[href='/bedding/blankets/']").trigger('hover')
+              // $("a+div.custom-bed-nav>.navPage-subMenu.navPage-subMenu-horizontal").first().show().css({"display":"block","background":"blue"})
+
+              // $("#navPages-custom").addClass("d-block");
+              $("a.navPage-subMenu-action.navPages-action.navPages-action-depth-max.has-subMenu").on('hover click mouseenter' , function(){
+                // $(this).css("background","red");
+                // $("#navPages-custom").removeClass("d-none");
+                $("#navPages-custom").addClass("d-none");
+                // $("a+div.custom-bed-nav>.navPage-subMenu.navPage-subMenu-horizontal>*,a+div.custom-bed-nav>.navPage-subMenu.navPage-subMenu-horizontal").first().show();
+              });
+
+              // $("#menu .navPages ul.navPage-subMenu-list > li.navPage-subMenu-item-child:hover > a + div.custom-bed-nav > .navPage-subMenu.navPage-subMenu-horizontal").css("display","block !important");
+              // $("div#navPages-32").css({ "display":"block","left":"0", "position":"fixed", "background":"#fff","border-top":"1px solid #ccc","border-left":"0", "padding":"0"});
+              // $(".header-div.sticky div#navPages-32").css("top","95px");
+              // $("div#navPages-32").css("padding","0 !important");
+                // $(" #menu .navPages ul.navPage-subMenu-list>li.navPage-subMenu-item-child:hover>a+div.custom-bed-nav>.navPage-subMenu.navPage-subMenu-horizontal").first().show();
+              }
+
+
+          });  
         </script>
 
           <script type="text/javascript">
@@ -349,3 +414,5 @@
         {{{footer.scripts}}}
     </body>
 </html>
+
+

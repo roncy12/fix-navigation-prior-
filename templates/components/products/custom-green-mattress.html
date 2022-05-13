@@ -110,7 +110,8 @@
 
                 <div class="custom-productTitle green-matt-title stamped-display">
                     <h1 class="productView-title mt-2" {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h1>
-                    <div  class="stamp-container bottom-space-10 d-none" style="display:flex;align-items: center;justify-content: unset;">
+                    {{#all (if product.title "!==" "Coolest Gel Memory Foam Mattress") }}
+                    <div  class="stamp-container bottom-space-10" style="display:flex;align-items: center;justify-content: unset;">
                         <div style="margin-bottom:0;">
                             <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                         </div>
@@ -118,10 +119,13 @@
                             (No ratings yet)
                         </span>
                     </div>
-                  
+                    {{/all}}
+                    
+                    {{#if product.title "===" "Coolest Gel Memory Foam Mattress"}}
                     <a id="rev-link">
                         <img src="https://stamped.io/inc/image/stars.png?apikey=pubkey-2L5A8636KNO175w7kxJ92V55UDvpz3&sId=116574&productId={{product.id}}" class="ml-img"/>
                     </a>
+                    {{/if}}
                     <!-- <a onclick="StampedFn.toggleForm('review')" class="ml-2" style="text-decoration: underline;">Write a review</a> -->
                     <!-- <div id="stamped-reviews-widget" style="display: inline-block;" data-widget-type="site-badge" data-badge-type="minimal" data-title="Verified Reviews" data-title-size="15" data-size-stars="12" data-element-id="1" data-lang="en"  data-product-id="{{ product.id }}"  ></div> -->
                     <!-- {{#if product.brand}}
@@ -490,7 +494,7 @@
             </div>
         </div>
 
-        <div class="types-of-foams">
+        <div class="types-of-foams d-none">
             <div class="text-section first">
                 <h4>Knitted Jacquard Fabric</h4>
                 <p>Intricately designed using precision knitting machines, the COOLest Gel mattress’ exterior fabric has a soft texture, greater extensibility and elasticity in addition to good wrinkle resistance and breathability.</p>
@@ -527,13 +531,55 @@
                 <img class="fifth lazyload" src="https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/live-mattress-layer-5.png" alt="">
             </div>
         </div>
+        <div class="types-of-foams position-relative">
+
+            <div class="text-section first">
+                <h4>Knitted Jacquard Fabric</h4>
+                <p>Intricately designed using precision knitting machines, the COOLest Gel mattress’ exterior fabric has a soft texture, greater extensibility and elasticity in addition to good wrinkle resistance and breathability.</p>
+                <a href="">Learn More</a>
+            </div>
+            <div class="text-section sec">
+                <h4>COOLest Gel-Infused Memory Foam</h4>
+                <p>Providing healthy support that helps you wake up free from aches and pains, our gel-infused memory foam regulates body temperature and promotes breathability – creating iconic sleep experiences every night.</p>
+                <a href="">Learn More</a>
+            </div>
+            <div class="text-section third">
+                <h4>Pressure Relief High-Density Foam</h4>
+                <p>Having almost twice the density of conventional foams, this high-density layer returns to shape after compression, offering a good balance between the mattress’ softness and support and providing pressure relief during sleep.</p>
+                <a href="">Learn More</a>
+            </div>            
+            <div class="text-section fourth">
+                <h4>Support High-Density Foam</h4>
+                <p>COOLest Gel’s ultra-solid base foam is packed with high-density polymer material that gives overall support and durability to the whole mattress while preventing sinking and sagging of the upper layers.
+                </p>
+                <a href="">Learn More</a>
+            </div>
+            <div class="text-section fifth">
+                <h4>Fire Resistant Base</h4>
+                <p>We’ve designed the COOLest Gel mattress to last even in extremely demanding and fire hazardous environments. The base layer contains a fabric that consists of fire retardant materials such as Aramid and rayon.</p>
+                <a href="">Learn More</a>
+            </div>
+   
+            <div class="image-layers position-relative">
+                <img class="lazyload d-block position-relative" src="https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/asset-mattress-latest.png" alt="">
+                <div class="abs-con m-0">
+                    <ul class="circle-list m-0">
+                        <li class="circle-1 activeCircle">1</li>
+                        <li class="circle-2">2</li>
+                        <li class="circle-3">3</li>
+                        <li class="circle-4">4</li>
+                        <li class="circle-5">5</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
         <div class="dreams-section">
             <div class="img-section">
                 <img src="https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/dreams.jpg?t=1648186056&_gl=1*1b22ymq*_ga*Nzk0NzIwMzUxLjE2NDY2MzgxMzc.*_ga_WS2VZYPC6G*MTY0ODE4NTg0OS43MS4wLjE2NDgxODU4NDkuNjA." alt="" class="w-100 lazyload">
             </div>
             <div class="text-section">
-                <h2>The Mattress of Your Dreams</h2>
+                <h2 class="mb-4">The Mattress of Your Dreams</h2>
                 <p>Icon Sleep's COOLest has a gel-infused memory foam top that promotes a
                     conducive sleep environment for all sleepers. This dream-inducing
                     layer on top of durable pressure relief and support foams make up for
@@ -544,7 +590,7 @@
         </div>
 
         <div class="firmness-section">
-            <h2>Finding The Perfect Firmness For You</h2>
+            <h2 class="mt-5">Finding The Perfect Firmness For You</h2>
             <p>Dont know which mattress firmness is for you? 88% of sleepers prefer a mattress that is in the happy medium range
                 of 4-7. See below chart for illustration on how our mattress is Constructed to please the masses.</p>
             <img src="https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/rate-matt-level.png?t=1648185847&_gl=1*1v1nie0*_ga*Nzk0NzIwMzUxLjE2NDY2MzgxMzc.*_ga_WS2VZYPC6G*MTY0ODE4NTg0OS43MS4wLjE2NDgxODU4NDkuNjA." alt="" class="lazyload">
@@ -595,16 +641,28 @@
 
             </div>
         </div>
+        <div id="newreview-section" class="p-4">
 
-        <div class="newreview-section" id="newreview-section">
+        </div>
+        <div class="newreview-section mt-0">
             <div class="flex d-none">
                 <h2>Reviews <span style="font-weight: normal;">(4.5)</span></h2>
                 <div id="stamped-reviews-widget" style="display: inline-block;" data-widget-type="site-badge" data-badge-type="minimal" data-title="Verified Reviews" data-title-size="15" data-size-stars="12" data-element-id="1" data-lang="en"  data-product-id="{{ product.id }}"  ></div>
                 <a href="/reviews/">See all reviews</a>
             </div>
-
-            <div id="stamped-main-widget" data-widget-type="one-column" data-take-reviews='4' data-product-id="{{ product.id }}">		
+            {{#if product.title "===" "Coolest Gel Memory Foam Mattress"}}
+                <div id="stamped-main-widget" data-widget-type="one-column" data-take-reviews='4' data-product-id="{{ product.id }}"></div>
+            {{/if}}
+            {{#all (if product.title "!==" "Coolest Gel Memory Foam Mattress") }}
+            <div class="review-counter">
+                <div id="stamped-main-widget" data-widget-style="standard" data-product-id="{{product.id}}" data-title="Customer Reviews" data-style-color-title="#2f2f2b" data-style-color-text="#2f2f2b" data-style-color-link="#2f2f2b" data-fill-empty="true" data-random="? string:Customer Reviews ?" data-product-image="true"></div>
             </div>
+            <script>
+                $(document).ready(function(){
+                    $(".productView.grn-matt-page .stamped-main-widget").remove()
+                });
+            </script>
+            {{/all}}
         </div>
         <div class="have-questionsec">
             <h2>Have questions?</h2>
@@ -817,3 +875,39 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    $(document).ready(function(){
+        $(".circle-list li").click(function(){
+            $(".circle-list li.activeCircle").removeClass("activeCircle");
+            $(this).addClass("activeCircle");
+
+            if($(this).text() == "1"){
+                $(".product-body .types-of-foams .text-section:not(.first)").addClass("d-none");
+                $(".product-body .types-of-foams .text-section:not(.first)").removeClass("d-block");
+                $(".product-body .types-of-foams .text-section.first").addClass("d-block");
+            }else if($(this).text() == "2"){
+                $(".product-body .types-of-foams .text-section:not(.sec)").addClass("d-none");
+                $(".product-body .types-of-foams .text-section:not(.sec)").removeClass("d-block");
+                $(".product-body .types-of-foams .text-section.sec").addClass("d-block");
+            }else if($(this).text() == "3"){
+                $(".product-body .types-of-foams .text-section:not(.third)").addClass("d-none");
+                $(".product-body .types-of-foams .text-section:not(.third)").removeClass("d-block");
+                $(".product-body .types-of-foams .text-section.third").addClass("d-block");
+            }else if($(this).text() == "4"){
+                $(".product-body .types-of-foams .text-section:not(.fourth)").addClass("d-none");
+                $(".product-body .types-of-foams .text-section:not(.fourth)").removeClass("d-block");
+                $(".product-body .types-of-foams .text-section.fourth").addClass("d-block");
+            }else if($(this).text() == "5"){
+                $(".product-body .types-of-foams .text-section:not(.fifth)").addClass("d-none");
+                $(".product-body .types-of-foams .text-section:not(.fifth)").removeClass("d-block");
+                $(".product-body .types-of-foams .text-section.fifth").addClass("d-block");
+            }            
+        });
+        
+        $("#rev-link").click(function() {
+            document.getElementById("newreview-section").scrollIntoView({behavior: 'smooth'});
+        });
+    });
+</script>
